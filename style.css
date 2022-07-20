@@ -1,0 +1,819 @@
+/*GENERAL*/
+
+:root{
+    --siteMainDark: rgb(10, 36, 99);
+    --siteMainLight: rgb(62, 146, 204);
+    --siteWhite: rgb(255, 250, 255);
+    --siteHighlight: rgb(216, 49, 91);
+    --siteBlack: rgb(30, 27, 24);
+    --siteOutlinesMain: 0px 0px 0.7rem 1px var(--siteMainLight);
+    --siteOutlinesSecondary: 0px 0px 0.7rem 1px var(--siteWhite);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+body{
+    background-color: var(--siteBlack);
+    color: var(--siteWhite);
+    height: 100vh;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+section#homePage{
+    background: url('spacebackground1.jpg') no-repeat center center/cover;
+    background-color: var(--siteMainDark);
+    background-blend-mode: soft-light;
+}
+
+section#projectsPage{
+    background: url('spacebackground2.jpg') no-repeat center center/cover;
+    background-color: var(--siteHighlight);
+    background-blend-mode: multiply;
+}
+
+section#contactPage{
+    background: url('spacebackground3.jpg') no-repeat center center/cover;
+    background-color: var(--siteMainLight);
+    background-blend-mode: multiply;
+}
+
+h2{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 10px var(--siteBlack);
+}
+
+h3{
+    font-size: 1.1rem;
+}
+
+h4{
+    font-size: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--siteWhite);
+    background-color: rgba(216, 49, 91, 0.7);
+}
+
+/*GENERAL*/
+/* HEADER & NAV */
+
+header{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    min-height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(10,36,99,1) 95%, rgba(62,146,204,1) 99%);
+    box-shadow: var(--siteOutlinesMain);
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px var(--siteBlack);
+    padding: 0 0.5rem;
+    margin-left: 3.5rem;
+    color: var(--siteWhite);
+    transition: ease-in-out 0.3s;
+}
+
+h1:hover{
+    opacity: 0.85;
+    color: var(--siteHighlight);
+}
+
+.navbar{
+    flex: 1;
+    padding: 0 0.5rem;
+    margin-right: 3.5rem;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%;
+}
+
+.nav-links li{
+    padding: 0 0.6rem;
+}
+
+.nav-links li a{
+    color: var(--siteWhite);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px var(--siteBlack);
+    transition: ease-in-out 0.3s;
+}
+
+.nav-links li a:hover, .aboutMeBox a:hover{
+    color: var(--siteHighlight);
+    opacity: 0.85;
+}
+
+
+.burger{
+    display: none;
+    color: var(--siteWhite);
+    border-radius: 10%;
+    padding: 9px;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: var(--siteWhite);
+    margin: 3px;
+    transition: all 0.3s ease;
+    float: right;
+    clear: right;
+}
+
+.quickContactButton{
+    display: none;
+}
+
+/* HEADER & NAV */
+/* HOME */
+
+.pfpBox{
+    display: flex;
+    height: 92vh;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    margin-right: 5rem;
+}
+
+.pfp{
+    width: 100%;
+}
+
+.mainMessageBox{
+    position: absolute;
+    top: 12vh;
+    right: 3%;
+    width: 47%;
+    height: 42vh;
+    max-height: 42vh;
+    padding: 1rem;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+}
+
+.mainMessageBox ul li{
+    font-size: 2.5rem;
+    color: var(--siteWhite);
+    text-shadow: 2px 2px 10px var(--siteBlack);
+    padding-top: 20px;
+}
+
+.mainMessageBox ul ::marker{
+    color: var(--siteWhite);
+    content: '\25B8';
+}
+
+.aboutMeBox{
+    position: absolute;
+    bottom: 3%;
+    left: 3%;
+    right: 3%;
+    max-height: 50vh;
+    background-color: rgba(10,36,99,0.5);
+    box-shadow: var(--siteOutlinesMain);
+    padding: 1rem;
+    border-radius: 10px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.aboutMeBox p{
+    font-size: 1.4rem;
+    margin: 6px 0px;
+    text-shadow: 1px 1px 6px var(--siteBlack);
+}
+
+.aboutMeBox a, .mobileTextSwingIn a{
+    color: var(--siteWhite);
+    text-decoration: underline;
+    transition: ease-in-out 0.3s;
+}
+
+.firstpLine{
+    font-size: 1.7rem !important;
+}
+
+.projectsArrow{
+    display: none;
+}
+
+.aboutMeBoxMobile, .mobileTextSwingIn{
+    display: none;
+}
+
+/* HOME */
+/* PROJECTS */
+
+.projectsHeader{
+    display: flex;
+    flex-direction: rows;
+}
+
+section#projectsPage p{
+    padding: 0.5rem;
+    text-shadow: 1px 1px 6px var(--siteBlack);
+}
+
+.projectBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    height: 80vh;
+    margin-top: 8vh;
+    background-color: rgba(255, 250, 255, 0.5);
+    box-shadow: var(--siteOutlinesSecondary);
+    padding: 1rem 0;
+    
+}
+
+.projectsCardBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    height: 85%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1.5rem;
+}
+
+.projectCard, .teaseCard{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 200px;
+    height: 100%;
+    max-height: 550px;
+    min-width: 300px;
+    width: 300px;
+    max-width: 300px;
+    border-radius: 10px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(216, 49, 91, 0.3);
+    box-shadow: 0px 1px 0.4rem 0.5px var(--siteBlack);
+    scroll-snap-align: start;
+    overflow: hidden;
+    transition: ease-in-out 0.3s;
+}
+
+.projectCard:hover, .teaseCard:hover{
+    box-shadow: 0px 1px 0.75rem 5px var(--siteBlack);
+    transform: scale(1.025);
+    opacity: 0.85;
+}
+
+.projectCard:active, .teaseCard:active{
+    opacity: 0.5;
+}
+
+.teaseCard{
+    background-color: rgba(128, 128, 128, 0.6);
+    font-weight: bold;
+    color: var(--siteWhite);
+}
+
+.teaseCard:hover{
+    cursor: pointer;
+}
+
+.teaseCard p{
+    font-size: 3rem;
+    text-align: center;
+
+}
+.cardPicContainer{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cardPicContainer img{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--siteWhite);
+}
+
+.cardContentContainer{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    min-height: 177px;
+}
+
+.cardContentContainer a{
+    color: var(--siteWhite)
+}
+
+.cardContentContainer h4:hover{
+    cursor: pointer;
+}
+
+.cardContentContainer p{
+    border: 1px solid var(--siteWhite);
+    font-size: 1rem;
+    line-height: 1rem;
+    margin: 0 !important;
+    flex: 1;
+}
+
+.cardLogoBar{
+    border: 1px solid var(--siteWhite);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 250, 255, 01);
+}
+
+.cardLogoBar img{
+    height: 25px;
+    vertical-align: middle;
+    transition: ease-in-out 0.1s;
+}
+
+.cardLogoBar img:hover{
+    cursor: pointer;
+    box-shadow: 0px 1px 0.4rem 0.5px var(--siteBlack);
+}
+
+.cardLogoBar img:active{
+    opacity: 0.75;
+}
+
+.construction{
+    background-color: hsl(51, 70%, 50%);
+    color: black;
+    position: absolute;
+    width: 100%;
+    bottom: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 !important;
+    border-left: 1px solid var(--siteWhite);
+    border-right: 1px solid var(--siteWhite);
+}
+
+
+/* PROJECTS */
+/* CONTACT */
+
+.contactBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 85%;
+    height: 80vh;
+    margin-top: 8vh;
+    background-color: rgba(10,36,99,0.5);
+    box-shadow: var(--siteOutlinesMain);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.contactBox p{
+    margin: 0.25rem 0;
+    width: 100%;
+    text-align: center;
+    text-shadow: 1px 1px 6px var(--siteBlack);
+    font-size: 1.2rem;
+}
+
+.contactBox form{
+    width: 100%;
+}
+
+.contactField{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.formName, .formMessage, .formSubmit{
+    outline: none;
+    border: none;
+    appearance: none;
+    background: none;
+    background-color: rgba(255, 250, 255, 0.45);
+    color: var(--siteWhite);
+    border-radius: 5px;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    box-shadow: 0px 1px 0.75rem 0.1px var(--siteMainLight);
+    transition: ease-in-out 0.3s;
+}
+
+.formMessage{
+    min-height: 100px;
+    resize: none;
+}
+
+.formMessage:hover, .formName:hover, .formSubmit:hover, .formMessage:focus, .formName:focus{
+    background-color: rgba(255, 250, 255, 0.55);
+    box-shadow: 0px 1px 0.75rem 0.3px var(--siteMainLight);
+}
+
+.formSubmit:hover{
+    cursor: pointer;
+}
+
+.formSubmit:active{
+    background-color: rgba(255, 250, 255, 0.85);
+    box-shadow: 0px 1px 0.75rem 0.7px var(--siteMainLight);
+}
+
+/* CONTACT */
+
+
+
+
+@media (max-width:1515px){
+    .projectsCardBox{
+        justify-content: flex-start;
+    }
+
+    .mainMessageBox{
+        width: 40%;
+    }
+    
+    .mainMessageBox ul li{
+        font-size: 1.8rem;
+    }
+
+    .aboutMeBox{
+        padding: 0.5rem 1rem;
+        justify-content: center;
+    }
+    
+    .aboutMeBox p{
+        font-size: 1.2rem;
+        margin: 7px 0px;
+    }
+    
+    .firstpLine{
+        font-size: 1.4rem !important;
+    }
+}
+
+@media (max-width:1024px){
+    h1{
+        font-size: 2rem;
+        margin-left: 2.5rem;
+    }
+    
+    .navbar{
+        margin-right: 2.5rem;
+        max-width: 50%;
+    }
+
+    .nav-links li a{
+        font-size: 1.4rem;
+    }
+
+    .nav-links li{
+        padding: 0 0.7rem;
+    }
+    
+    .mainMessageBox ul li{
+        font-size: 1.2rem;
+        padding-top: 6px;
+    }
+
+    .aboutMeBox{
+        padding: 0.5rem 1rem;
+    }
+    
+    .aboutMeBox p{
+        font-size: 0.95rem;
+        margin: 4px 0px;
+    }
+    
+    .firstpLine{
+        font-size: 1.1rem !important;
+    }
+}
+
+
+
+
+@media (max-width:600px){
+
+    .pfpBox{
+        width: 66%;
+        height: auto;
+        top: auto;
+        bottom: 50vh;
+        left: 5%;
+        margin-right: 5rem;
+    }
+
+    .projectCard, .teaseCard{
+        min-width: 220px;
+        width: 220px;
+        max-width: 220px;
+    }
+
+    .cardContentContainer{
+        min-height: 240px;
+    }
+
+    .cardContentContainer p{
+        font-size: 1.1rem;
+    }
+
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 50vh;
+        top: 8vh;
+        bottom: 42vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 33%;
+        transform: translateX(118%);
+        background: linear-gradient(270deg, rgba(10,36,99,0.95) 95%, rgba(62,146,204,1) 99%);
+        box-shadow: var(--siteOutlinesMain);
+        border-bottom-left-radius: 15px;
+    }
+
+    .nav-links li{
+        opacity: 0;
+    }
+
+    .burgerContainer{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .quickContactButton{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 85px;
+        margin-right: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        background-color: rgba(255, 250, 255, 0.4);
+        outline: none;
+        border: none;
+        transition: ease-in-out 0.3s;
+        border-radius: 10px;
+        padding: 4px;
+        color: var(--siteWhite);
+    }
+
+    .quickContactButton:hover{
+        box-shadow: 0px 1px 0.5rem var(--siteMainLight);
+        background-color: rgba(255, 250, 255, 0.6);
+        color: var(--siteHighlight);
+    }
+
+    .quickContactButton:active{
+        background-color: rgba(255, 250, 255, 0.85);
+    }
+
+    .projectsArrow{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        bottom: 1.5rem;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+        width: 40%;
+        z-index: 20;
+        border-radius: 10px;
+        padding: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        background-color: rgba(216, 49, 91, 1);
+        box-shadow: 0px 1px 0.4rem 0.5px var(--siteWhite);
+        color: var(--siteWhite);
+        outline: none;
+        border: none;
+    }
+
+    .projectsArrow:hover{
+        background-color: rgba(216, 49, 91, 0.75);
+        box-shadow: 0px 1px 0.75rem 1px var(--siteWhite);
+    }
+
+    .projectsArrow:active{
+        background-color: rgba(216, 49, 91, 0.5);
+    }
+
+    .navbar{
+        margin-right: 1rem;
+        max-width: 45%;
+    }
+
+    h1{
+        font-size: 1.7rem;
+        margin-left: 1rem;
+    }
+
+    .aboutMeBox{
+        display: none;
+    }
+
+    .mainMessageBox{
+        top: 9vh;
+    }
+
+    .mainMessageBox ul li{
+        font-size: 1rem;
+        padding-top: 6px;
+    }
+
+    .aboutMeBoxMobile{
+        position: absolute;
+        top: 55vh;
+        left: 3%;
+        right: 3%;
+        background-color: rgba(10,36,99,0.5);
+        box-shadow: var(--siteOutlinesMain);
+        padding: 0.5rem;
+        border-radius: 10px;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        overflow: hidden;
+    }
+    
+    .aboutMeBoxMobile p, .mobileTextSwingIn p{
+        font-size: 1rem;
+        margin: 4px 0px;
+        text-shadow: 1px 1px 6px var(--siteBlack);
+    }
+
+    .readMore{
+        outline: none;
+        border: none;
+        background: none;
+        color: var(--siteWhite);
+        font-size: 1rem;
+        text-decoration: underline;
+        cursor: pointer;
+        display: flex;
+    }
+
+    .mobileTextSwingIn{
+        position: absolute;
+        z-index: 25;
+        display: flex;
+        top: 40vh;
+        left: 3%;
+        right: 3%;
+        bottom: 0.5rem;
+        background-color: rgba(10,36,99,1);
+        box-shadow: var(--siteOutlinesMain);
+        padding: 0.5rem;
+        border-radius: 10px;
+        flex-direction: column;
+        overflow: hidden;
+        transform: translateY(110%);
+    }
+
+    .closeButtonContainer{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .closeButton{
+        outline: none;
+        border: none;
+        background: none;
+        color: var(--siteWhite);
+        font-size: 2rem;
+    }
+
+    .contactBox p{
+        font-size: 1rem;
+    }
+}
+
+@media (max-height:497px){
+    .mainMessageBox{
+        width: 45%;
+    }
+}
+
+@media (max-height:460px){
+    .mainMessageBox{
+        width: 49%;
+    }
+}
+
+@media (max-height:429px){
+    .mainMessageBox{
+        width: 52%;
+    }
+}
+
+@media (max-height:401px){
+    .mainMessageBox{
+        width: 55%;
+    }
+}
+
+
+.nav-active{
+    transform: translateX(0%);
+    transition: transform 0.5s ease-in;
+}
+
+.text-active{
+    transform: translateY(0%);
+    transition: transform 0.5s ease-in;
+}
+
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-6px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-6px,-6px);
+}

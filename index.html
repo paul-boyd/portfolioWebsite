@@ -1,0 +1,203 @@
+<div class=""><!DOCTYPE html></div>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <script src="site.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+    <title>Paul's Profile</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href='#homePage'><h1>Paul Boyd</h1></a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href='#homePage'>Home</a></li>
+                    <li><a href='#projectsPage'>Projects</a></li>
+                    <li><a href='#contactPage'>Contact</a></li>
+                </ul>
+                <div class="burgerContainer">
+                    <a href='#contactPage'><button class="quickContactButton">Contact</button></a>
+                    <div class="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section id="homePage">
+            <div class="pfpBox">
+                <img src="pfp.png" class="pfp" alt="Paul's profile picture">
+            </div>
+            <div class="mainMessageBox">
+                <ul>
+                    <li>Quick learner</li>
+                    <li>7.5yrs Finance experience</li>
+                    <li><strong>Eager to start my new career!</strong></li>
+                </ul>
+            </div>
+            <div class="aboutMeBox">
+                <p class="firstpLine">
+                    I was uninspired by Finance, and needed a change. I discovered the world of computer programming, <strong>and haven't looked back</strong>.
+                </p>
+                <p>
+                    In April 2022, I began self-learning computer science fundamentals, and moved onto HTML, CSS, JavaScript, and Haskell. Although I still have a lot to learn, I now feel ready to present myself to employers, capable of learning the job.
+                </p>
+                <p>
+                    I reside in Ontario, Canada, and <strong>looking for full time, remote work.</strong> Please <a href='#contactPage'>contact me</a> to setup an interview!
+                </p>
+            </div>
+            <div class="aboutMeBoxMobile">
+                <p>
+                    I was uninspired by Finance, and needed a change. I discovered the world of computer programming, <strong>and haven't looked back</strong>.
+                </p>
+                <button class="readMore">Read more.</button>
+            </div>
+            <div class="mobileTextSwingIn">
+                <div class="closeButtonContainer">
+                    <button class="closeButton"><ion-icon name="close-outline"></ion-icon></button>
+                </div>
+                <p>
+                    In April 2022, I began self-learning computer science fundamentals, and moved onto HTML, CSS, JavaScript, and Haskell. Although I still have a lot to learn, I now feel ready to present myself to employers, capable of learning the job.
+                </p>
+                <p>
+                    I reside in Ontario, Canada, and <strong>looking for full time, remote work.</strong> Please <a href='#contactPage'>contact me</a> to setup an interview!
+                </p>
+            </div>
+            <a href='#projectsPage'>
+                <button class="projectsArrow">My Projects <ion-icon name="arrow-down-outline"></ion-icon></button>
+            </a>
+        </section>
+
+        <section id="projectsPage">
+            <div class="projectBox">
+                <h2>My Projects</h2>
+                <div class="projectsCardBox">
+                    <div class="projectCard">
+                        <div class="cardPicContainer">
+                            <a href='toDoApp.html' target="_blank">
+                                <img src="projectPicTaskApp.png" alt="Picture of task list app">
+                            </a>
+                        </div>
+                        <div class="cardContentContainer">
+                            <a href='toDoApp.html' target="_blank">
+                                <h4>Task List App</h4>
+                            </a>
+                            <p>A very functional task list! Uses local storage for memory, can drag/drop tasks, sortable by date/time, and overall smooth UI for both desktop & mobile. Built to develop my Javascript skills, and overall frontend knowledge.</p>
+                        </div>
+                        <div class="cardLogoBar">
+                            <div class="logosLeft">
+                                <a href="https://github.com/paul-boyd/taskList" target="_blank">
+                                    <img src="htmlLogo.jpg">
+                                    <img src="cssLogo.jpg">
+                                    <img src="javascriptLogo.jpg">
+                                </a>
+                            </div>
+                            <div class="logosRight">
+                                <a href="https://github.com/paul-boyd/taskList" target="_blank">
+                                    <img src="githubLogo.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projectCard">
+                        
+                        <div class="cardPicContainer">
+                            <a href="https://github.com/paul-boyd/dogSimulator" target="_blank">
+                                <img src="projectPicDogSim.jpg" alt="Picture of dog">
+                                <p class="construction">In Construction</p>
+                            </a>
+                        </div>
+                        <div class="cardContentContainer">
+                            <a href="https://github.com/paul-boyd/dogSimulator" target="_blank">
+                                <h4>Dog Simulator</h4>
+                            </a>
+                            <p>Game where user interacts with dog via text message or action options. Dog will react depending on your actions. Building to develop my Haskell skills, and overall backend knowledge. <strong>Currently functional within terminal!</strong></p>
+                        </div>
+                        <div class="cardLogoBar">
+                            <div class="logosLeft">
+                                <a href="https://github.com/paul-boyd/dogSimulator" target="_blank">
+                                    <img src="haskellLogo.png">
+                                </a>
+                            </div>
+                            <div class="logosRight">
+                                <a href="https://github.com/paul-boyd/dogSimulator" target="_blank">
+                                    <img src="githubLogo.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projectCard">
+                        <div class="cardPicContainer">
+                            <a href='#homePage'>
+                                <img src="projectPicWebsite.png" alt="Thumbnail image of this websites home page">
+                            </a>
+                        </div>
+                        <div class="cardContentContainer">
+                            <a href='#homePage'>
+                                <h4>This Website</h4>
+                            </a>
+                            <p>A website to showcase myself for potential employers! Disigned to be to the point, and easy to navigate on both desktop & mobile. This developed my HTML/CSS/JS skills, as well as my overall web design & development knowledge.</p>
+                        </div>
+                        <div class="cardLogoBar">
+                            <div class="logosLeft">
+                                <a href="https://github.com/paul-boyd/portfolioWebsite" target="_blank">
+                                    <img src="htmlLogo.jpg">
+                                    <img src="cssLogo.jpg">
+                                    <img src="javascriptLogo.jpg">
+                                </a>
+                            </div>
+                            <div class="logosRight">
+                                <a href="https://github.com/paul-boyd/portfolioWebsite" target="_blank">
+                                    <img src="githubLogo.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href='#contactPage'>
+                        <div class="teaseCard">
+                            <p>Your project next?</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="contactPage">
+            <div class="contactBox">
+                <h2>Contact Me!</h2>
+                <p>Please include your contact details in your message.</p>
+                <form class="contactForm" action="email.php" method="POST">
+                    <div class="contactField">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" required class="formName">
+                    </div>
+                    <div class="contactField">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" required class="formMessage" oninput="autoHeight(event, '100px')"></textarea>
+                    </div>
+                    <div class="contactSubmitBox">
+                        <input type="submit" class="formSubmit" value="Send Message">
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+
+
+        <footer></footer>
+    </div>
+</body>
+</html>
